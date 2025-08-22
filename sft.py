@@ -156,7 +156,7 @@ def collate_fn(batch):
     return input_ids, attention_mask, labels
 
 train_dataset = SFTDataset(train_data)
-train_loader = DataLoader(train_dataset, batch_size=batch_size, collate_fn=collate_fn)
+train_loader = DataLoader(train_dataset, batch_size=batch_size, collate_fn=collate_fn, shuffle=True)
 
 num_eval_samples = 16
 total_examples = len(train_data)
